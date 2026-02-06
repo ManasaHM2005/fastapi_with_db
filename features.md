@@ -1,0 +1,8 @@
+-login singup
+-history of chat
+-adding attachments to chat(RAG )
+-pin a chat(3 chats)
+-share a chat
+-group chat
+-delete a chat
+-voice input
