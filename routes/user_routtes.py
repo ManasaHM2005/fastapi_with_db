@@ -4,18 +4,15 @@ from fastapi import Depends
 from pydantic import BaseModel
 from db import get_db
 from repositories.user_repo import UserRepo
-from model import User
+from schemas.user_schemas import UserSchemas
 
 
-class UserCreate(BaseModel):
-    email: str
-    password: str
 
 
 router = APIRouter()
 
 @router.post("/signup")
-def signup(user: UserCreate, db: Session = Depends(get_db)):
+def signup(db:Session = Depends(get_db)):
     user_repo = UserRepo(db)
     db_user = User(email=user.email, password=user.password)
     user_repo.add_user(db_user)
