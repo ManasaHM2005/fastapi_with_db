@@ -45,3 +45,5 @@ def create_tokens(user_id: int, email: str) -> dict:
         "refresh_token": create_refresh_token(token_data),
         "token_type": "bearer"
     }
+
+     
